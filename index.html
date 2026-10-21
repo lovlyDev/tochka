@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Точка — автосервис на Кирпичной, 19 · Курск</title>
+  <meta name="description" content="Автосервис «Точка» в Курске: ТО, тормоза, двигатель, диагностика, ходовая. Кирпичная ул., 19. Ежедневно 9:00–19:00. +7 (951) 088-08-08." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="img/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="draft">Черновик сайта для автосервиса «Точка» · делает <a href="https://lovlydev.github.io" target="_blank" rel="noreferrer">lovlyDev</a></div>
+  <div class="topline">
+    <div class="wrap">
+      <span><b class="live" id="live"></b><span id="openText">Ежедневно 9:00 — 19:00</span></span>
+      <a href="tel:+79510880808">+7 (951) 088-08-08</a>
+    </div>
+  </div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo"><img class="brand" src="img/logo.jpg" alt="" />Точка</a>
+      <nav>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#why">Почему мы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#book" class="btn btn-yellow">Записаться</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <picture class="hero-bg"><source srcset="img/hero.avif" type="image/avif" /><img src="img/hero.webp" alt="Мастер осматривает двигатель" /></picture>
+      <div class="wrap hero-inner">
+        <p class="badge">Новое место · Кирпичная, 19</p>
+        <h1>Автосервис <span>«Точка»</span></h1>
+        <p class="lead">ТО, тормоза, двигатель, ходовая и диагностика для отечественных и иномарок. Честные цены, гарантия и запчасти в наличии.</p>
+        <div class="hero-cta">
+          <a href="#book" class="btn btn-yellow">Записаться на ремонт</a>
+          <a href="#prices" class="btn btn-ghost">Смотреть цены</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>5.0 ★</strong><span>рейтинг на Яндекс Картах</span></li>
+          <li><strong>177</strong><span>оценок клиентов</span></li>
+          <li><strong>9–19</strong><span>ежедневно, без выходных</span></li>
+        </ul>
+      </div>
+      <div class="hazard" aria-hidden="true"></div>
+    </section>
+
+    <section class="services wrap" id="services">
+      <div class="head reveal">
+        <h2>Что делаем</h2>
+        <p>Легковые автомобили: отечественные, корейские, японские, китайские и европейские.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc reveal"><span class="num">01</span><h3>ТО и жидкости</h3><p>Масло в двигателе и коробке, фильтры, свечи, тормозная и охлаждающая жидкость.</p></article>
+        <article class="svc reveal"><span class="num">02</span><h3>Тормоза</h3><p>Колодки, диски, барабаны, суппорты и стояночный тормоз.</p></article>
+        <article class="svc reveal"><span class="num">03</span><h3>Двигатель</h3><p>Диагностика, регулировка клапанов, промывка форсунок, замена ГРМ.</p></article>
+        <article class="svc reveal"><span class="num">04</span><h3>Ходовая</h3><p>Осмотр и ремонт подвески, развал-схождение, шиномонтаж.</p></article>
+        <article class="svc reveal"><span class="num">05</span><h3>КПП и сцепление</h3><p>Замена сцепления, ремонт АКПП и DSG, масло в коробке.</p></article>
+        <article class="svc reveal"><span class="num">06</span><h3>Электрика и сварка</h3><p>Генераторы, сигнализации, свет фар, сварочные работы.</p></article>
+      </div>
+    </section>
+
+    <section class="prices" id="prices">
+      <div class="wrap prices-inner">
+        <div class="prices-text reveal">
+          <h2>Цены на работы</h2>
+          <p>Цены из нашего прайса. Точную стоимость назовём после осмотра — и согласуем до начала работ.</p>
+          <div class="classes" role="tablist">
+            <button role="tab" aria-selected="true" data-cat="to">ТО</button>
+            <button role="tab" aria-selected="false" data-cat="brakes">Тормоза</button>
+            <button role="tab" aria-selected="false" data-cat="engine">Двигатель</button>
+            <button role="tab" aria-selected="false" data-cat="diag">Диагностика</button>
+          </div>
+          <picture class="prices-photo"><source srcset="img/lift.avif" type="image/avif" /><img src="img/lift.webp" alt="Автомобиль на подъёмнике" loading="lazy" /></picture>
+        </div>
+        <ul class="price-list reveal" id="priceList"></ul>
+      </div>
+    </section>
+
+    <section class="why wrap" id="why">
+      <div class="why-media reveal">
+        <picture><source srcset="img/engine.avif" type="image/avif" /><img src="img/engine.webp" alt="Ремонт двигателя" loading="lazy" /></picture>
+        <picture><source srcset="img/hands.avif" type="image/avif" /><img src="img/hands.webp" alt="Мастер с ключом" loading="lazy" /></picture>
+      </div>
+      <div class="why-text reveal">
+        <h2>Почему «Точка»</h2>
+        <ul class="checks">
+          <li><b>Рейтинг 5.0</b> на Яндекс Картах — 177 оценок от клиентов.</li>
+          <li><b>Цена согласуется заранее.</b> Нашли что-то ещё — сначала позвоним.</li>
+          <li><b>Запчасти в наличии</b> для отечественных автомобилей и иномарок.</li>
+          <li><b>Гарантия</b> на выполненные работы.</li>
+          <li><b>Выездной сервис</b>, если машина не на ходу.</li>
+          <li><b>Удобно ждать:</b> Wi-Fi и кофе. Оплата картой, по QR и СБП.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="wrap book-inner">
+        <div class="reveal">
+          <h2>Записаться на ремонт</h2>
+          <p>Напишите или позвоните — подберём удобное время. Работаем каждый день с 9:00 до 19:00.</p>
+          <picture class="book-photo"><source srcset="img/tools.avif" type="image/avif" /><img src="img/tools.webp" alt="Инструменты" loading="lazy" /></picture>
+        </div>
+        <div class="contact-card reveal">
+          <a class="cbtn tg" href="https://t.me/Tochka_Autoservice" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.5 1.3z" /></svg>
+            <span><b>Telegram</b><small>Написать в чат</small></span>
+          </a>
+          <a class="cbtn vk" href="https://vk.com/tochka_avtoservis" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.8 18.5c-6.3 0-9.9-4.3-10-11.5h3.2c.1 5.3 2.4 7.5 4.3 8V7h3v4.6c1.8-.2 3.8-2.3 4.4-4.6h3c-.5 2.8-2.6 4.9-4 5.8 1.5.7 3.8 2.6 4.7 5.7h-3.3c-.7-2.2-2.5-3.9-4.8-4.1v4.1h-.5z" /></svg>
+            <span><b>ВКонтакте</b><small>Написать сообществу</small></span>
+          </a>
+          <a class="cbtn tel" href="tel:+79510880808">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" /></svg>
+            <span><b>+7 (951) 088-08-08</b><small>Позвонить</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts wrap" id="contacts">
+      <div class="reveal">
+        <h2>Как доехать</h2>
+        <dl>
+          <div><dt>Адрес</dt><dd>Курск, Кирпичная ул., 19</dd></div>
+          <div><dt>Часы</dt><dd>Ежедневно 9:00 — 19:00</dd></div>
+          <div><dt>Телефон</dt><dd><a href="tel:+79510880808">+7 (951) 088-08-08</a></dd></div>
+          <div><dt>Оплата</dt><dd>Карта, СБП, QR, наличные</dd></div>
+        </dl>
+      </div>
+      <div class="map reveal">
+        <iframe title="Точка на карте" src="https://yandex.ru/map-widget/v1/?ll=36.167072%2C51.797523&z=16&pt=36.167072%2C51.797523%2Cpm2ylm&l=map" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span class="logo"><img class="brand" src="img/logo.jpg" alt="" />Точка</span>
+    <p>Автосервис «Точка», Курск, Кирпичная ул., 19</p>
+    <a href="https://lovlydev.github.io" target="_blank" rel="noreferrer">Сайт — lovlyDev ↗</a>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // open/closed badge by Moscow time (9:00–19:00 daily)
+    const mskHour = +new Intl.DateTimeFormat('ru-RU', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Moscow' }).format(new Date());
+    const open = mskHour >= 9 && mskHour < 19;
+    document.getElementById('openText').textContent = (open ? 'Сейчас открыто' : 'Сейчас закрыто') + ' · ежедневно 9:00 — 19:00';
+    if (!open) document.getElementById('live').classList.add('off');
+
+    // price list from the «Точка» VK services catalogue
+    const prices = {
+      to: [['Замена масла в двигателе', 800], ['Замена масла в МКПП', 800], ['Замена масла в АКПП (частичная)', 2500], ['Замена воздушного фильтра', 200], ['Замена салонного фильтра', 200], ['Замена топливного фильтра', 600], ['Замена свечей зажигания', 600], ['Замена тормозной жидкости', 800], ['Замена охлаждающей жидкости', 1200], ['Замена щёток стеклоочистителей', 200], ['Замена ламп', 100]],
+      brakes: [['Замена передних тормозных колодок', 800], ['Замена задних тормозных колодок', 1800], ['Замена передних тормозных дисков и колодок', 1600], ['Замена задних тормозных барабанов', 800], ['Разработка суппортов со смазкой направляющих', 800], ['Обслуживание тормозных механизмов', 800], ['Регулировка стояночного тормоза', 800]],
+      engine: [['Регулировка клапанов', 2000], ['Промывка форсунок', 1600], ['Очистка дроссельной заслонки', 1600], ['Замена сцепления в сборе', 6000]],
+      diag: [['Диагностика двигателя', 800], ['Считывание кодов неисправностей', 800], ['Осмотр ходовой', 800], ['Проверка и регулировка света фар', 800]],
+    };
+    const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+    const list = document.getElementById('priceList');
+    const show = cat => { list.innerHTML = prices[cat].map(([n, p]) => `<li><span>${n}</span><b class="flash">${fmt(p)}</b></li>`).join(''); };
+    document.querySelectorAll('[data-cat]').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-cat]').forEach(b => b.setAttribute('aria-selected', b === btn));
+      show(btn.dataset.cat);
+    }));
+    show('to');
+  </script>
+</body>
+</html>
