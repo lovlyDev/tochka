@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Точка — автосервис на Кирпичной, 19 · Курск</title>
-  <meta name="description" content="Автосервис «Точка» в Курске: ТО, тормоза, двигатель, диагностика, ходовая. Кирпичная ул., 19. Ежедневно 9:00–19:00. +7 (951) 088-08-08." />
+  <meta name="description" content="Автосервис «Точка» в Курске: ТО, тормоза, двигатель, диагностика, ходовая, КПП. Кирпичная ул., 19. Ежедневно 9:00–19:00. +7 (951) 088-08-08." />
   <meta name="robots" content="noindex" />
   <link rel="icon" href="img/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,99 +14,120 @@
 </head>
 <body>
   <div class="draft">Черновик сайта для автосервиса «Точка» · делает <a href="https://lovlydev.github.io" target="_blank" rel="noreferrer">lovlyDev</a></div>
+
   <div class="topline">
     <div class="wrap">
       <span><b class="live" id="live"></b><span id="openText">Ежедневно 9:00 — 19:00</span></span>
-      <span class="topline-right"><span class="addr">Кирпичная ул., 19</span><a href="tel:+79510880808">+7 (951) 088-08-08</a></span>
+      <span class="tl-right"><span class="tl-addr">Курск, Кирпичная ул., 19</span><a href="tel:+79510880808">+7 (951) 088-08-08</a></span>
     </div>
   </div>
+
   <header class="nav">
     <div class="wrap nav-inner">
-      <a href="#top" class="logo"><img class="brand" src="img/logo.jpg" alt="" />Точка</a>
+      <a href="#top" class="logo"><img src="img/logo.jpg" alt="" />Точка</a>
       <nav>
         <a href="#services">Услуги</a>
         <a href="#prices">Цены</a>
+        <a href="#steps">Как работаем</a>
         <a href="#reviews">Отзывы</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <a href="#book" class="btn btn-yellow">Записаться</a>
+      <button class="btn btn-y btn-sm" data-open="callback">Заказать звонок</button>
     </div>
   </header>
 
   <main id="top">
+    <!-- hero with a quick estimate form -->
     <section class="hero">
       <picture class="hero-bg"><source srcset="img/hero.avif" type="image/avif" /><img src="img/hero.webp" alt="" /></picture>
-      <div class="wrap hero-inner">
+      <div class="wrap hero-grid">
         <div class="hero-text">
           <p class="badge">Новое место · Кирпичная, 19</p>
           <h1>Ремонт и ТО <span>без лишних трат</span></h1>
-          <p class="lead">Автосервис «Точка» в Курске: ТО, тормоза, двигатель, ходовая и диагностика. Цену согласуем до начала работ, запчасти — в наличии.</p>
-          <div class="hero-cta">
-            <a href="#book" class="btn btn-yellow">Записаться на ремонт</a>
-            <a href="#prices" class="btn btn-ghost">Смотреть цены</a>
-          </div>
+          <p class="lead">ТО, тормоза, двигатель, ходовая и коробка для отечественных машин и иномарок. Цену согласуем до начала работ, запчасти — в наличии.</p>
+          <ul class="chips">
+            <li><b>5.0 ★</b>рейтинг на Картах</li>
+            <li><b>177</b>оценок клиентов</li>
+            <li><b>9–19</b>каждый день</li>
+          </ul>
         </div>
-        <a class="rating-card" href="https://yandex.ru/maps/org/tochka/86005171762/reviews/" target="_blank" rel="noreferrer">
-          <img src="img/logo.jpg" alt="Логотип «Точка»" />
-          <div>
-            <div class="stars" aria-label="5 из 5">★★★★★</div>
-            <strong>5.0</strong>
-            <span>177 оценок и 73 отзыва<br />на Яндекс Картах</span>
-          </div>
-        </a>
+        <form class="quote" data-form>
+          <h2>Узнайте стоимость ремонта</h2>
+          <p>Перезвоним в течение 15 минут в рабочее время</p>
+          <label>Марка и модель<input required placeholder="Например, Kia Rio" /></label>
+          <label>Что нужно сделать
+            <select><option>Плановое ТО / замена масла</option><option>Тормоза</option><option>Диагностика</option><option>Ходовая</option><option>Двигатель</option><option>КПП / сцепление</option><option>Не знаю, нужна консультация</option></select>
+          </label>
+          <label>Телефон<input required type="tel" placeholder="+7 (___) ___-__-__" /></label>
+          <button class="btn btn-y" type="submit">Узнать стоимость</button>
+          <small class="note" role="status"></small>
+        </form>
       </div>
       <div class="hazard" aria-hidden="true"></div>
     </section>
 
-    <div class="brands" aria-label="Обслуживаем">
-      <div class="wrap brands-inner">
-        <span class="brands-label">Обслуживаем</span>
-        <span>Отечественные</span><span>Корейские</span><span>Японские</span><span>Китайские</span><span>Европейские</span>
-      </div>
-    </div>
+    <!-- benefits -->
+    <section class="perks wrap">
+      <div class="perk reveal"><span class="pi"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4zM8 7V5h8v2M4 12h16" /></svg></span><b>Цена заранее</b><span>Согласуем стоимость до начала работ и не меняем без звонка</span></div>
+      <div class="perk reveal"><span class="pi"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 7.8-7 9-4-1.2-7-4.6-7-9V6z" /><path d="m9 12 2 2 4-4" /></svg></span><b>Гарантия</b><span>Отвечаем за выполненные работы</span></div>
+      <div class="perk reveal"><span class="pi"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4zM3 7v10l9 4 9-4V7M12 11v10" /></svg></span><b>Запчасти в наличии</b><span>Для отечественных авто и иномарок</span></div>
+      <div class="perk reveal"><span class="pi"><svg viewBox="0 0 24 24"><path d="M3 17h2l1-5h12l1 5h2M6 12l2-5h8l2 5M7 17v2M17 17v2" /><circle cx="8" cy="15" r="1" /><circle cx="16" cy="15" r="1" /></svg></span><b>Выездной сервис</b><span>Приедем, если машина не на ходу</span></div>
+    </section>
 
-    <section class="services wrap" id="services">
+    <!-- popular jobs bento -->
+    <section class="popular wrap">
       <div class="head reveal">
-        <h2>Что делаем</h2>
-        <p>Всё для легкового автомобиля — от замены лампочки до ремонта коробки.</p>
+        <h2>Чаще всего делаем</h2>
+        <p>Цены за работу из нашего прайса</p>
       </div>
-      <div class="svc-grid">
-        <article class="svc reveal">
-          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7.2 6 10.5A6 6 0 0 1 6 13.5C6 10.2 9 7 12 3z" /></svg></span>
-          <h3>ТО и жидкости</h3><p>Масло в двигателе и коробке, фильтры, свечи, тормозная и охлаждающая жидкость.</p>
-        </article>
-        <article class="svc reveal">
-          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="3" /><path d="M12 4v2M12 18v2M4 12h2M18 12h2" /></svg></span>
-          <h3>Тормоза</h3><p>Колодки, диски, барабаны, суппорты и стояночный тормоз.</p>
-        </article>
-        <article class="svc reveal">
-          <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 10h3l2-3h6l1 3h3v7h-3l-1 2H9l-2-2H4zM9 7V5h6v2" /></svg></span>
-          <h3>Двигатель</h3><p>Диагностика, регулировка клапанов, промывка форсунок, замена ГРМ.</p>
-        </article>
-        <article class="svc reveal">
-          <span class="ico"><svg viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M7 8h10M7 16h10M4 6h6M14 6h6M4 18h6M14 18h6" /></svg></span>
-          <h3>Ходовая</h3><p>Осмотр и ремонт подвески, развал-схождение, шиномонтаж.</p>
-        </article>
-        <article class="svc reveal">
-          <span class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2" /><circle cx="12" cy="6" r="2" /><circle cx="18" cy="6" r="2" /><circle cx="6" cy="18" r="2" /><circle cx="12" cy="18" r="2" /><path d="M6 8v8M12 8v8M18 8v4H6" /></svg></span>
-          <h3>КПП и сцепление</h3><p>Замена сцепления, ремонт АКПП и DSG, масло в коробке.</p>
-        </article>
-        <article class="svc reveal">
-          <span class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z" /></svg></span>
-          <h3>Электрика и сварка</h3><p>Генераторы, сигнализации, свет фар, сварочные работы.</p>
-        </article>
+      <div class="bento">
+        <a href="#prices" data-goto="to" class="tile big reveal">
+          <picture><source srcset="img/oil.avif" type="image/avif" /><img src="img/oil.webp" alt="Замена масла" loading="lazy" /></picture>
+          <div class="tile-body"><span class="tag">ТО</span><h3>Замена масла в двигателе</h3><b>800 ₽</b></div>
+        </a>
+        <a href="#prices" data-goto="brakes" class="tile reveal">
+          <picture><source srcset="img/brakes.avif" type="image/avif" /><img src="img/brakes.webp" alt="Тормоза" loading="lazy" /></picture>
+          <div class="tile-body"><span class="tag">Тормоза</span><h3>Передние колодки</h3><b>800 ₽</b></div>
+        </a>
+        <a href="#prices" data-goto="diag" class="tile reveal">
+          <picture><source srcset="img/diag.avif" type="image/avif" /><img src="img/diag.webp" alt="Диагностика" loading="lazy" /></picture>
+          <div class="tile-body"><span class="tag">Диагностика</span><h3>Диагностика двигателя</h3><b>800 ₽</b></div>
+        </a>
+        <a href="#prices" data-goto="engine" class="tile wide reveal">
+          <picture><source srcset="img/gearbox.avif" type="image/avif" /><img src="img/gearbox.webp" alt="Сцепление" loading="lazy" /></picture>
+          <div class="tile-body"><span class="tag">КПП</span><h3>Замена сцепления в сборе</h3><b>6 000 ₽</b></div>
+        </a>
       </div>
     </section>
 
+    <!-- services with photos -->
+    <section class="services wrap" id="services">
+      <div class="head reveal">
+        <h2>Услуги</h2>
+        <p>Всё для легкового автомобиля — от замены лампочки до ремонта коробки</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal"><picture><source srcset="img/oil.avif" type="image/avif" /><img src="img/oil.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>ТО и жидкости</h3><p>Масло, фильтры, свечи, тормозная и охлаждающая жидкость</p><div class="card-foot"><b>от 100 ₽</b><a href="#prices" data-goto="to">Цены →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/brakes.avif" type="image/avif" /><img src="img/brakes.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>Тормозная система</h3><p>Колодки, диски, барабаны, суппорты, ручник</p><div class="card-foot"><b>от 800 ₽</b><a href="#prices" data-goto="brakes">Цены →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/diag.avif" type="image/avif" /><img src="img/diag.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>Диагностика</h3><p>Двигатель, коды ошибок, ходовая, свет фар</p><div class="card-foot"><b>от 800 ₽</b><a href="#prices" data-goto="diag">Цены →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/engine.avif" type="image/avif" /><img src="img/engine.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>Двигатель</h3><p>Клапаны, форсунки, дроссель, ГРМ</p><div class="card-foot"><b>от 1 600 ₽</b><a href="#prices" data-goto="engine">Цены →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/suspension.avif" type="image/avif" /><img src="img/suspension.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>Ходовая и развал</h3><p>Ремонт подвески и развал-схождение</p><div class="card-foot"><b>от 800 ₽</b><a href="#book" data-open="callback">Записаться →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/gearbox.avif" type="image/avif" /><img src="img/gearbox.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>КПП и сцепление</h3><p>Сцепление, ремонт АКПП и DSG, масло в коробке</p><div class="card-foot"><b>от 800 ₽</b><a href="#prices" data-goto="engine">Цены →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/tire.avif" type="image/avif" /><img src="img/tire.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>Шиномонтаж</h3><p>Сезонная замена и балансировка колёс</p><div class="card-foot"><b>по запросу</b><a href="#book" data-open="callback">Узнать →</a></div></div></article>
+        <article class="card reveal"><picture><source srcset="img/electric.avif" type="image/avif" /><img src="img/electric.webp" alt="" loading="lazy" /></picture><div class="card-body"><h3>Электрика и сварка</h3><p>Генераторы, сигнализации, сварочные работы</p><div class="card-foot"><b>по запросу</b><a href="#book" data-open="callback">Узнать →</a></div></div></article>
+      </div>
+    </section>
+
+    <!-- full price list -->
     <section class="prices" id="prices">
-      <div class="wrap prices-inner">
-        <div class="prices-text reveal">
+      <div class="wrap prices-grid">
+        <div class="reveal">
           <h2>Цены на работы</h2>
-          <p>Цены из нашего прайса за работу, без запчастей. Точную стоимость назовём после осмотра и согласуем до начала ремонта.</p>
-          <div class="classes" role="tablist">
+          <p class="muted">Цены за работу, без запчастей. Точную стоимость назовём после осмотра и согласуем до начала ремонта.</p>
+          <div class="tabs" role="tablist">
             <button role="tab" aria-selected="true" data-cat="to">ТО</button>
             <button role="tab" aria-selected="false" data-cat="brakes">Тормоза</button>
-            <button role="tab" aria-selected="false" data-cat="engine">Двигатель</button>
+            <button role="tab" aria-selected="false" data-cat="engine">Двигатель и КПП</button>
             <button role="tab" aria-selected="false" data-cat="diag">Диагностика</button>
           </div>
           <p class="norm">Нормочас — <b>от 1 000 ₽</b>. Оплата картой, по QR, СБП или наличными.</p>
@@ -115,52 +136,58 @@
       </div>
     </section>
 
-    <section class="why wrap" id="reviews">
-      <div class="why-media reveal">
-        <picture><source srcset="img/engine.avif" type="image/avif" /><img src="img/engine.webp" alt="Ремонт двигателя" loading="lazy" /></picture>
-        <picture><source srcset="img/hands.avif" type="image/avif" /><img src="img/hands.webp" alt="Мастер с ключом" loading="lazy" /></picture>
+    <!-- brands -->
+    <section class="brands wrap reveal">
+      <h2>Обслуживаем</h2>
+      <div class="brand-chips">
+        <span>Lada</span><span>Kia</span><span>Hyundai</span><span>Toyota</span><span>Lexus</span><span>Mitsubishi</span><span>Mazda</span><span>Renault</span><span>Volkswagen</span><span>Skoda</span><span>Audi</span><span>Mercedes-Benz</span><span>Ford</span><span>Chevrolet</span><span>Daewoo</span><span>Peugeot</span><span>Genesis</span><span>Chery</span><span>Haval</span><span>Geely</span>
       </div>
-      <div class="why-text reveal">
-        <h2>Почему «Точка»</h2>
-        <ul class="checks">
-          <li><b>Рейтинг 5.0</b> на Яндекс Картах — по 177 оценкам клиентов.</li>
-          <li><b>Цена согласуется заранее.</b> Нашли что-то ещё — сначала позвоним.</li>
-          <li><b>Запчасти в наличии</b> для отечественных автомобилей и иномарок.</li>
-          <li><b>Гарантия</b> на выполненные работы.</li>
-          <li><b>Выездной сервис</b>, если машина не на ходу.</li>
-          <li><b>Удобно ждать:</b> Wi-Fi и кофе.</li>
-        </ul>
-        <a class="link-yellow" href="https://yandex.ru/maps/org/tochka/86005171762/reviews/" target="_blank" rel="noreferrer">Читать отзывы на Яндекс Картах →</a>
+      <p class="muted">И другие отечественные, корейские, японские, китайские и европейские автомобили.</p>
+    </section>
+
+    <!-- how it works, no numbering -->
+    <section class="steps-sec" id="steps">
+      <div class="wrap">
+        <div class="head reveal"><h2>Как мы работаем</h2><p>Прозрачно на каждом шаге</p></div>
+        <ol class="steps">
+          <li class="reveal"><span class="si"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" /></svg></span><b>Заявка</b><span>Звоните или пишите в Telegram и ВК</span></li>
+          <li class="reveal"><span class="si"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" /><path d="m20 20-4.5-4.5" /></svg></span><b>Осмотр</b><span>Находим причину и показываем вам</span></li>
+          <li class="reveal"><span class="si"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6zM9 10h6M9 14h6M9 18h4" /></svg></span><b>Смета</b><span>Согласуем цену и сроки до начала работ</span></li>
+          <li class="reveal"><span class="si"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.6 2.6-2.4-.6-.6-2.4z" /></svg></span><b>Ремонт</b><span>Делаем аккуратно, старые детали отдаём</span></li>
+          <li class="reveal"><span class="si"><svg viewBox="0 0 24 24"><path d="M3 17h2l1-5h12l1 5h2M6 12l2-5h8l2 5" /><circle cx="8" cy="15" r="1" /><circle cx="16" cy="15" r="1" /></svg></span><b>Выдача</b><span>Принимаете машину и платите удобным способом</span></li>
+        </ol>
       </div>
     </section>
 
+    <!-- real Yandex reviews -->
+    <section class="reviews wrap" id="reviews">
+      <div class="rev-side reveal">
+        <h2>Отзывы клиентов</h2>
+        <div class="rev-score"><img src="img/logo.jpg" alt="" /><div><span class="stars">★★★★★</span><strong>5.0</strong><small>177 оценок · 73 отзыва<br />на Яндекс Картах</small></div></div>
+        <p class="muted">Это настоящие отзывы — они подтягиваются прямо с Яндекс Карт.</p>
+        <a class="btn btn-ghost" href="https://yandex.ru/maps/org/tochka/86005171762/reviews/" target="_blank" rel="noreferrer">Все отзывы на Картах</a>
+      </div>
+      <div class="rev-widget reveal">
+        <iframe title="Отзывы о «Точке» на Яндекс Картах" src="https://yandex.ru/maps-reviews-widget/86005171762?comments" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- booking band -->
     <section class="book" id="book">
-      <div class="wrap book-inner">
+      <div class="wrap book-grid">
         <div class="reveal">
-          <h2>Записаться на ремонт</h2>
-          <ul class="flow">
-            <li><b>Напишите или позвоните</b><span>Расскажите, что беспокоит в машине</span></li>
-            <li><b>Подберём время</b><span>Работаем каждый день с 9:00 до 19:00</span></li>
-            <li><b>Приезжайте</b><span>Осмотрим и согласуем цену до начала работ</span></li>
-          </ul>
+          <h2>Запишитесь на ремонт</h2>
+          <p>Ответим и подберём время. Работаем каждый день с 9:00 до 19:00.</p>
         </div>
-        <div class="contact-card reveal">
-          <a class="cbtn tg" href="https://t.me/Tochka_Autoservice" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.5 1.3z" /></svg>
-            <span><b>Telegram</b><small>Написать в чат</small></span>
-          </a>
-          <a class="cbtn vk" href="https://vk.com/tochka_avtoservis" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.8 18.5c-6.3 0-9.9-4.3-10-11.5h3.2c.1 5.3 2.4 7.5 4.3 8V7h3v4.6c1.8-.2 3.8-2.3 4.4-4.6h3c-.5 2.8-2.6 4.9-4 5.8 1.5.7 3.8 2.6 4.7 5.7h-3.3c-.7-2.2-2.5-3.9-4.8-4.1v4.1h-.5z" /></svg>
-            <span><b>ВКонтакте</b><small>Написать сообществу</small></span>
-          </a>
-          <a class="cbtn tel" href="tel:+79510880808">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" /></svg>
-            <span><b>+7 (951) 088-08-08</b><small>Позвонить</small></span>
-          </a>
+        <div class="book-btns reveal">
+          <a class="cbtn tg" href="https://t.me/Tochka_Autoservice" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.5l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.5 1.3z" /></svg><span><b>Telegram</b><small>Написать в чат</small></span></a>
+          <a class="cbtn vk" href="https://vk.com/tochka_avtoservis" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><path d="M12.8 18.5c-6.3 0-9.9-4.3-10-11.5h3.2c.1 5.3 2.4 7.5 4.3 8V7h3v4.6c1.8-.2 3.8-2.3 4.4-4.6h3c-.5 2.8-2.6 4.9-4 5.8 1.5.7 3.8 2.6 4.7 5.7h-3.3c-.7-2.2-2.5-3.9-4.8-4.1v4.1h-.5z" /></svg><span><b>ВКонтакте</b><small>Написать сообществу</small></span></a>
+          <a class="cbtn tel" href="tel:+79510880808"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" /></svg><span><b>+7 (951) 088-08-08</b><small>Позвонить</small></span></a>
         </div>
       </div>
     </section>
 
+    <!-- contacts -->
     <section class="contacts wrap" id="contacts">
       <div class="reveal">
         <h2>Как доехать</h2>
@@ -169,29 +196,45 @@
           <div><dt>Часы</dt><dd>Ежедневно 9:00 — 19:00</dd></div>
           <div><dt>Телефон</dt><dd><a href="tel:+79510880808">+7 (951) 088-08-08</a></dd></div>
           <div><dt>Парковка</dt><dd>Есть, в том числе для людей с инвалидностью</dd></div>
+          <div><dt>Оплата</dt><dd>Карта, СБП, QR, наличные</dd></div>
         </dl>
-        <a class="link-yellow" href="https://yandex.ru/maps/org/tochka/86005171762/" target="_blank" rel="noreferrer">Построить маршрут →</a>
+        <a class="link-y" href="https://yandex.ru/maps/org/tochka/86005171762/" target="_blank" rel="noreferrer">Построить маршрут →</a>
       </div>
       <div class="map reveal">
-        <iframe title="Точка на карте" src="https://yandex.ru/map-widget/v1/?ll=36.167072%2C51.797523&z=16&pt=36.167072%2C51.797523%2Cpm2ylm&l=map" loading="lazy" allowfullscreen></iframe>
+        <iframe title="«Точка» на карте" src="https://yandex.ru/map-widget/v1/?ll=36.167072%2C51.797523&z=16&pt=36.167072%2C51.797523%2Cpm2ylm&l=map" loading="lazy" allowfullscreen></iframe>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <span class="logo"><img class="brand" src="img/logo.jpg" alt="" />Точка</span>
-    <p>Автосервис «Точка», Курск, Кирпичная ул., 19</p>
-    <a href="https://lovlydev.github.io" target="_blank" rel="noreferrer">Сайт — lovlyDev ↗</a>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <a href="#top" class="logo"><img src="img/logo.jpg" alt="" />Точка</a>
+      <p>Автосервис «Точка» · Курск, Кирпичная ул., 19 · ежедневно 9:00–19:00</p>
+      <a href="https://lovlydev.github.io" target="_blank" rel="noreferrer" class="credit">Сайт — lovlyDev ↗</a>
+    </div>
   </footer>
 
-  <!-- phone-only bar: the two actions people actually take -->
+  <!-- callback modal -->
+  <dialog id="callback" class="modal">
+    <form class="quote" data-form>
+      <button type="button" class="x" data-close aria-label="Закрыть">×</button>
+      <h2>Заказать звонок</h2>
+      <p>Оставьте номер — перезвоним в течение 15 минут в рабочее время</p>
+      <label>Имя<input required placeholder="Как к вам обращаться" /></label>
+      <label>Телефон<input required type="tel" placeholder="+7 (___) ___-__-__" /></label>
+      <button class="btn btn-y" type="submit">Перезвоните мне</button>
+      <small class="note" role="status"></small>
+    </form>
+  </dialog>
+
+  <a class="fab" href="tel:+79510880808" aria-label="Позвонить"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" /></svg></a>
   <div class="mbar">
     <a href="tel:+79510880808" class="mbar-call">Позвонить</a>
     <a href="https://t.me/Tochka_Autoservice" target="_blank" rel="noreferrer" class="mbar-tg">Telegram</a>
   </div>
 
   <script>
-    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .15 });
+    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
     // open/closed badge by Moscow time (9:00–19:00 daily)
@@ -212,12 +255,25 @@
     };
     const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
     const list = document.getElementById('priceList');
-    const show = cat => { list.innerHTML = prices[cat].map(([n, p]) => `<li><span>${n}</span><b class="flash">${fmt(p)}</b></li>`).join(''); };
-    document.querySelectorAll('[data-cat]').forEach(btn => btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-cat]').forEach(b => b.setAttribute('aria-selected', b === btn));
-      show(btn.dataset.cat);
-    }));
+    const show = cat => {
+      document.querySelectorAll('[data-cat]').forEach(b => b.setAttribute('aria-selected', b.dataset.cat === cat));
+      list.innerHTML = prices[cat].map(([n, p]) => `<li><span>${n}</span><b>${fmt(p)}</b></li>`).join('');
+    };
+    document.querySelectorAll('[data-cat]').forEach(b => b.addEventListener('click', () => show(b.dataset.cat)));
+    document.querySelectorAll('[data-goto]').forEach(a => a.addEventListener('click', () => show(a.dataset.goto)));
     show('to');
+
+    // callback modal
+    const dlg = document.getElementById('callback');
+    document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); dlg.showModal(); }));
+    dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+    // forms are a demo in the draft: in the real site requests go to the owner's Telegram
+    document.querySelectorAll('[data-form]').forEach(f => f.addEventListener('submit', e => {
+      e.preventDefault();
+      f.querySelector('.note').textContent = 'Черновик: в готовом сайте заявка сразу придёт вам в Telegram.';
+    }));
   </script>
 </body>
 </html>
