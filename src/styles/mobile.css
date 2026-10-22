@@ -1,0 +1,176 @@
+/* =====================================================================
+   Tablets and phones. Desktop layout lives in base.css / sections.css;
+   everything below only adapts it for touch and narrow screens.
+   ===================================================================== */
+
+/* horizontal swipe rows (no visible scrollbar) */
+.scroll-x { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.scroll-x::-webkit-scrollbar { display: none; }
+
+/* ---------- tablets ---------- */
+@media (max-width: 1080px) {
+  .nav-desk, .header-phone { display: none; }
+  .header-right { margin-left: auto; }
+  .burger { position: relative; display: grid; place-content: center; gap: 5px; width: 46px; height: 46px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); }
+  .burger span { display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--text); transition: transform .35s var(--ease), opacity .2s; }
+  .menu-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-open .burger span:nth-child(2) { opacity: 0; }
+  .menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mmenu { position: fixed; inset: 0; z-index: 45; display: flex; flex-direction: column; justify-content: space-between; padding: calc(var(--header) + 24px) 24px calc(24px + env(safe-area-inset-bottom)); background: var(--bg); clip-path: inset(0 0 100% 0); transition: clip-path .55s var(--ease); }
+  .mmenu.open { clip-path: inset(0 0 0 0); }
+  .mmenu nav { display: flex; flex-direction: column; }
+  .mmenu nav a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); font: 30px var(--display); text-transform: uppercase; opacity: 0; transform: translateY(20px); transition: opacity .4s, transform .5s var(--ease), color .2s; }
+  .mmenu.open nav a { opacity: 1; transform: none; }
+  .mmenu nav a svg { color: var(--y); }
+  .mmenu-foot { display: grid; gap: 10px; }
+  .mmenu-phone { font: 28px var(--display); color: var(--y); }
+  .mmenu-foot p { color: var(--muted); font-size: 14px; }
+  .mmenu-social { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
+  .mmenu-social a { display: flex; align-items: center; justify-content: center; gap: 8px; height: 52px; border-radius: 12px; background: var(--panel); font-weight: 600; }
+
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-rating { flex-direction: row; align-items: center; gap: 14px; justify-self: start; padding: 14px 18px; }
+  .hero-rating b { font-size: 40px; }
+  .bento { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
+  .tile.big { grid-row: span 1; grid-column: span 2; }
+  .steps { grid-template-columns: repeat(3, 1fr); }
+  .steps li::after { display: none; }
+  .why-grid, .reviews, .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
+  .why-media { max-width: 520px; }
+  .why-badge { right: 16px; }
+  .prices-bar { flex-direction: column; align-items: stretch; }
+  .search { width: 100%; }
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 768px) {
+  :root { --header: 62px; }
+  .wrap { width: calc(100% - 32px); }
+  body { font-size: 15.5px; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .section { padding-top: 76px; }
+  .head { margin-bottom: 22px; gap: 10px; }
+  .head h2, .contacts h2, .rev-side h2 { font-size: 32px; }
+  .head p { font-size: 14.5px; }
+  .btn { height: 52px; font-size: 14px; }
+  .btn-lg { height: 56px; }
+
+  /* header: logo + open status + burger; booking moves to the bottom bar */
+  .header-book { display: none; }
+  .header-right { gap: 10px; }
+  .header .open-badge { font-size: 12px; }
+  .header .ob-full { display: none; }
+  .header .ob-short { display: inline; }
+  .logo-pin { width: 34px; height: 34px; border-radius: 9px; }
+  .logo-text b { font-size: 19px; }
+  .logo-text small { font-size: 10.5px; }
+
+  /* hero: content pinned to the bottom of the first screen, big tappable buttons */
+  .hero { min-height: calc(100svh - 76px); }
+  .hero::before { background: linear-gradient(0deg, rgba(17, 19, 22, .98) 15%, rgba(17, 19, 22, .55) 60%, rgba(17, 19, 22, .4)); }
+  .hero-grid { gap: 22px; padding: calc(var(--header) + 40px) 0 56px; }
+  .hero-kicker { margin-bottom: 18px; font-size: 13px; padding: 7px 12px; }
+  .hero h1 { font-size: clamp(40px, 12.5vw, 58px); }
+  .hero-lead { margin-top: 16px; font-size: 16px; }
+  .hero-cta { flex-direction: column; margin-top: 26px; gap: 10px; }
+  .hero-cta .btn { width: 100%; }
+  .hero-rating { width: 100%; justify-content: flex-start; padding: 12px 16px; border-radius: 14px; }
+  .hero-rating b { font-size: 34px; }
+  .hero-rating .stars svg { width: 15px; height: 15px; }
+  .hazard { height: 10px; }
+
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stats-inner > div { padding: 18px 4px 18px 16px; }
+  .stats-inner > div:nth-child(odd) { padding-left: 0; }
+  .stats-inner > div:nth-child(3) { border-left: 0; }
+  .stats-inner > div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .stats b { font-size: 24px; }
+  .stats span { font-size: 13px; }
+
+  /* popular: swipe carousel instead of a grid */
+  .bento { display: flex; gap: 12px; margin-inline: -16px; padding: 0 16px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .bento::-webkit-scrollbar { display: none; }
+  .tile, .tile.big, .tile.wide { flex: 0 0 82%; height: 330px; scroll-snap-align: center; }
+  .tile.big h3, .tile h3 { font-size: 22px; }
+  .tile-foot b { font-size: 24px; }
+  .add { width: 52px; height: 52px; }
+
+  /* prices: compact sticky bar, one column, larger rows */
+  .prices { margin-top: 76px; padding: 64px 0; }
+  .prices-bar { top: calc(var(--header) + 6px); gap: 8px; padding: 6px; margin-inline: -6px; border-radius: 14px; }
+  .tabs button { height: 40px; padding: 0 12px; font-size: 14px; }
+  .search { height: 42px; }
+  .search input { font-size: 16px; }
+  .price-list { grid-template-columns: 1fr; }
+  .price-list li > button { gap: 10px; padding: 15px 0; }
+  .price-list li > button:hover { padding-left: 0; background: none; }
+  .pl-name { flex: 1; flex-wrap: wrap; font-size: 15px; line-height: 1.35; }
+  .pl-dots { display: none; }
+  .pl-price { font-size: 16px; }
+  .pl-add { width: 38px; height: 38px; }
+  .also { gap: 6px; }
+  .also span { flex-basis: 100%; }
+  .also i { font-size: 13px; padding: 7px 12px; }
+
+  .brands { padding-top: 50px; }
+  .marquee-track span { padding: 10px 18px; font-size: 16px; }
+  .brands-note { font-size: 14px; padding: 0 8px; }
+
+  /* steps: swipe cards */
+  .steps { display: flex; gap: 10px; margin-inline: -16px; padding: 0 16px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .steps::-webkit-scrollbar { display: none; }
+  .steps li { flex: 0 0 70%; scroll-snap-align: start; }
+  .steps-cta { flex-direction: column; }
+
+  .why { margin-top: 76px; padding: 64px 0; }
+  .why-grid { gap: 28px; }
+  .why-media img { aspect-ratio: 16 / 11; border-radius: 18px; }
+  .why-badge { right: 12px; bottom: 12px; padding: 12px 16px; }
+  .why-badge b { font-size: 20px; }
+  .perks { grid-template-columns: 1fr; gap: 8px; }
+  .perks li { padding: 16px; }
+
+  .reviews { gap: 24px; }
+  .rev-score { margin: 18px 0 14px; padding: 16px; }
+  .rev-score > b { font-size: 46px; }
+  .rev-widget { border-radius: 16px; }
+  .rev-widget iframe { height: 470px; }
+
+  .faq { grid-template-columns: 1fr; gap: 8px; }
+  .faq-item > button { padding: 18px; font-size: 15.5px; }
+  .faq-body p { padding: 0 18px; }
+
+  .contacts { margin-top: 76px; padding: 64px 0; }
+  .addr { font-size: 17px; }
+  .week li { font-size: 14px; }
+  .map { min-height: 320px; border-radius: 16px; }
+
+  .footer-grid { flex-direction: column; text-align: center; padding: 28px 0 32px; }
+
+  /* bottom action bar: call, MAX and book are always one tap away */
+  .mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 64px 64px 1fr; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(17, 19, 22, .94); backdrop-filter: blur(14px); border-top: 1px solid var(--line); }
+  .mbar-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; height: 56px; border-radius: 12px; background: var(--panel); font-size: 11px; font-weight: 600; color: #c9ced4; }
+  .mbar-btn:active, .mbar-main:active { transform: scale(.96); }
+  .mbar-main { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 12px; background: var(--y); color: #111; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: .03em; transition: transform .2s; }
+  .toast { bottom: calc(88px + env(safe-area-inset-bottom)); width: calc(100% - 24px); }
+
+  /* booking: a bottom sheet with a grab handle */
+  .sheet { place-items: end stretch; }
+  .sheet-panel { width: 100%; max-height: 92svh; padding: 26px 18px calc(24px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; border-bottom: 0; transform: translateY(100%); opacity: 1; }
+  .sheet.open .sheet-panel { transform: none; }
+  .sheet-handle { display: block; width: 44px; height: 5px; margin: -12px auto 14px; border-radius: 3px; background: var(--line-2); }
+  .sheet-x { top: 12px; right: 10px; }
+  .book h2, .book-done h2 { font-size: 26px; padding-right: 40px; }
+  .book-row { grid-template-columns: 1fr; }
+  .chips.scroll-x { flex-wrap: nowrap; margin-inline: -18px; padding: 0 18px; }
+  .chip.day { flex: none; min-width: 84px; }
+  .times { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .times .chip { min-width: 0; padding: 12px 0; }
+}
+
+@media (max-width: 380px) {
+  .header .open-badge { display: none; }
+  .hero h1 { font-size: 36px; }
+  .mbar { grid-template-columns: 56px 56px 1fr; }
+  .times { grid-template-columns: repeat(3, 1fr); }
+}
