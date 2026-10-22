@@ -64,7 +64,7 @@ export function Popular({ onAdd, inCart }: { onAdd: (s: Service) => void; inCart
   ];
   return (
     <section className="section wrap" id="services">
-      <div className="head reveal"><h2>Чаще всего делаем</h2><p>Цены за работу из нашего прайса. Нажмите «+», чтобы добавить в заявку.</p></div>
+      <div className="head reveal"><div><span className="label">Популярное</span><h2>Чаще всего делаем</h2></div><p>Цены за работу из нашего прайса. Нажмите «+», чтобы добавить в заявку.</p></div>
       <div className="bento">
         {tiles.map(({ s, img, big, wide }, i) => (
           <article key={s.name} className={`tile reveal${big ? ' big' : ''}${wide ? ' wide' : ''}`} style={{ '--i': i } as CSSProperties}>
@@ -96,7 +96,7 @@ export function Prices({ onAdd, inCart }: { onAdd: (s: Service) => void; inCart:
     <section className="prices" id="prices">
       <div className="wrap">
         <div className="head reveal">
-          <h2>Цены на работы</h2>
+          <div><span className="label">Прайс · {services.length} работ</span><h2>Цены на работы</h2></div>
           <p>Цены за работу, без запчастей. Нормочас — от 1 000 ₽. Точную стоимость назовём после осмотра.</p>
         </div>
         <div className="prices-bar">
@@ -138,14 +138,23 @@ export function Prices({ onAdd, inCart }: { onAdd: (s: Service) => void; inCart:
 
 /* ---------------- brands marquee ---------------- */
 export function Brands() {
+  const row = [...brands, ...brands];
   return (
     <section className="brands" aria-label="Обслуживаем марки">
+      <div className="wrap brands-head reveal">
+        <span className="label">Марки</span>
+        <p>Обслуживаем легковые: отечественные, корейские, японские, европейские — и китайские <b>Chery, Haval, Geely</b>, а также Lexus, Genesis и Daewoo.</p>
+      </div>
       <div className="marquee">
         <div className="marquee-track">
-          {[...brands, ...brands].map((b, i) => <span key={i}>{b}</span>)}
+          {row.map((b, i) => (
+            <span key={i} className="brand" title={b.name} aria-hidden={i >= brands.length}>
+              <i style={{ '--logo': `url(./brands/${b.id}.svg)` } as CSSProperties} />
+              <small>{b.name}</small>
+            </span>
+          ))}
         </div>
       </div>
-      <p className="wrap brands-note">Легковые: отечественные, корейские, японские, китайские и европейские.</p>
     </section>
   );
 }
@@ -153,19 +162,19 @@ export function Brands() {
 /* ---------------- how it works ---------------- */
 export function Steps({ onBook }: { onBook: () => void }) {
   const steps = [
-    { icon: 'chat', t: 'Заявка', d: 'Онлайн, в MAX, ВК или по телефону' },
-    { icon: 'scan', t: 'Осмотр', d: 'Находим причину и показываем вам' },
-    { icon: 'tag', t: 'Цена', d: 'Согласуем стоимость до начала работ' },
-    { icon: 'gear', t: 'Ремонт', d: 'Делаем аккуратно, с гарантией' },
-    { icon: 'check', t: 'Готово', d: 'Забираете машину, платите удобно' },
+    { t: 'Заявка', d: 'На сайте, в MAX, ВКонтакте или по телефону.' },
+    { t: 'Осмотр', d: 'Находим причину и показываем её вам.' },
+    { t: 'Цена', d: 'Называем стоимость до начала работ.' },
+    { t: 'Ремонт', d: 'Делаем аккуратно, даём гарантию.' },
+    { t: 'Готово', d: 'Забираете машину, платите как удобно.' },
   ];
   return (
     <section className="section wrap steps-sec">
-      <div className="head reveal"><h2>Как мы работаем</h2><p>Прозрачно на каждом шаге.</p></div>
-      <ol className="steps">
+      <div className="head reveal"><div><span className="label">Как это устроено</span><h2>От звонка до ключей</h2></div><p>Без сюрпризов в счёте: вы знаете цену до того, как мы начали.</p></div>
+      <ol className="timeline reveal">
         {steps.map((s, i) => (
-          <li key={s.t} className="reveal" style={{ '--i': i } as CSSProperties}>
-            <span className="step-ico"><Icon name={s.icon} size={24} /></span>
+          <li key={s.t} style={{ '--i': i } as CSSProperties}>
+            <span className="tl-dot" aria-hidden="true" />
             <b>{s.t}</b><span>{s.d}</span>
           </li>
         ))}
@@ -186,12 +195,13 @@ export function Why() {
           <div className="why-badge"><b>гарантия</b><span>на выполненные работы</span></div>
         </div>
         <div>
-          <div className="head reveal"><h2>Почему «Точка»</h2></div>
+          <div className="head reveal"><div><span className="label">Почему мы</span><h2>Почему «Точка»</h2></div></div>
           <ul className="perks">
             {perks.map((p, i) => (
               <li key={p.title} className="reveal" style={{ '--i': i } as CSSProperties}>
-                <span className="perk-ico"><Icon name={icons[i]} size={22} /></span>
-                <div><b>{p.title}</b><span>{p.text}</span></div>
+                <b>{p.title}</b>
+                <span>{p.text}</span>
+                <Icon name={icons[i]} size={44} className="perk-ico" />
               </li>
             ))}
           </ul>
@@ -206,7 +216,8 @@ export function Reviews() {
   return (
     <section className="section wrap reviews" id="reviews">
       <div className="rev-side reveal">
-        <h2>Отзывы</h2>
+        <span className="label">Отзывы</span>
+        <h2>Что говорят клиенты</h2>
         <div className="rev-score">
           <b>{rating.value}</b>
           <div><span className="stars">{[0, 1, 2, 3, 4].map(i => <Icon key={i} name="star" size={18} />)}</span><small>{rating.votes} оценок · {rating.reviews} отзыва на Яндекс Картах</small></div>
@@ -226,14 +237,26 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="section wrap faq-sec">
-      <div className="head reveal"><h2>Частые вопросы</h2></div>
-      <div className="faq">
-        {faq.map(([q, a], i) => (
-          <div key={q} className={`faq-item reveal${open === i ? ' open' : ''}`} style={{ '--i': i } as CSSProperties}>
-            <button onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>{q}<span className="faq-plus" aria-hidden="true" /></button>
-            <div className="faq-body"><p>{a}</p></div>
+      <div className="faq-grid">
+        <div className="faq-side reveal">
+          <span className="label">Вопросы</span>
+          <h2>Частые вопросы</h2>
+          <div className="faq-card">
+            <b>Не нашли ответ?</b>
+            <p>Позвоните или напишите — ответим в рабочее время.</p>
+            <a className="btn btn-y btn-block" href={contacts.phoneHref}><Icon name="phone" />{contacts.phone}</a>
+            <a className="btn btn-ghost btn-block" href={contacts.max} target="_blank" rel="noreferrer"><MaxIcon size={20} />Написать в MAX</a>
           </div>
-        ))}
+        </div>
+        {/* .reveal sits on a static wrapper: React rewrites the item's className on toggle and would drop «in» */}
+        <div className="faq reveal">
+          {faq.map(([q, a], i) => (
+            <div key={q} className={`faq-item${open === i ? ' open' : ''}`}>
+              <button onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}>{q}<span className="faq-plus" aria-hidden="true" /></button>
+              <div className="faq-body"><p>{a}</p></div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -249,6 +272,7 @@ export function Contacts({ onBook }: { onBook: () => void }) {
     <section className="contacts" id="contacts">
       <div className="wrap contacts-grid">
         <div className="reveal">
+          <span className="label">Контакты</span>
           <h2>Как доехать</h2>
           <a className="addr" href={contacts.mapsOrg} target="_blank" rel="noreferrer"><Icon name="pin" />{contacts.address}</a>
           <ul className="week">

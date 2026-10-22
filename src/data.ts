@@ -64,7 +64,13 @@ export const services: Service[] = [
 /** work types from the Yandex card that have no fixed price */
 export const alsoDo = ['Развал-схождение', 'Шиномонтаж', 'Ремонт ходовой', 'Замена ГРМ', 'Ремонт АКПП и DSG', 'Ремонт генераторов', 'Сигнализации', 'Сварочные работы', 'Выездной сервис'];
 
-export const brands = ['Lada', 'Kia', 'Hyundai', 'Toyota', 'Lexus', 'Mitsubishi', 'Mazda', 'Renault', 'Volkswagen', 'Skoda', 'Audi', 'Mercedes-Benz', 'Ford', 'Chevrolet', 'Daewoo', 'Peugeot', 'Genesis', 'Chery', 'Haval', 'Geely'];
+/** logos from Simple Icons (public/brands); brands without a logo are named in the caption */
+export const brands = [
+  { id: 'lada', name: 'Lada' }, { id: 'kia', name: 'Kia' }, { id: 'hyundai', name: 'Hyundai' }, { id: 'toyota', name: 'Toyota' },
+  { id: 'mitsubishi', name: 'Mitsubishi' }, { id: 'mazda', name: 'Mazda' }, { id: 'renault', name: 'Renault' }, { id: 'volkswagen', name: 'Volkswagen' },
+  { id: 'skoda', name: 'Škoda' }, { id: 'audi', name: 'Audi' }, { id: 'mercedes', name: 'Mercedes-Benz' }, { id: 'ford', name: 'Ford' },
+  { id: 'chevrolet', name: 'Chevrolet' }, { id: 'peugeot', name: 'Peugeot' },
+];
 
 export const perks = [
   { title: 'Цена до начала работ', text: 'Осматриваем, называем стоимость и только потом берёмся за ремонт.' },

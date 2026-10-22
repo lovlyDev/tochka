@@ -34,8 +34,9 @@
   .hero-rating b { font-size: 40px; }
   .bento { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
   .tile.big { grid-row: span 1; grid-column: span 2; }
-  .steps { grid-template-columns: repeat(3, 1fr); }
-  .steps li::after { display: none; }
+  .timeline { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
+  .timeline::before, .timeline::after { display: none; }
+  .faq-grid { grid-template-columns: 1fr; gap: 32px; }
   .why-grid, .reviews, .contacts-grid { grid-template-columns: 1fr; gap: 40px; }
   .why-media { max-width: 520px; }
   .why-badge { right: 16px; }
@@ -113,13 +114,19 @@
   .also i { font-size: 13px; padding: 7px 12px; }
 
   .brands { padding-top: 50px; }
-  .marquee-track span { padding: 10px 18px; font-size: 16px; }
-  .brands-note { font-size: 14px; padding: 0 8px; }
+  .brands-head { flex-direction: column; gap: 4px; margin-bottom: 18px; }
+  .brands-head p { font-size: 14.5px; }
+  .brand { width: 112px; height: 90px; gap: 8px; border-radius: 14px; }
+  .brand i { width: 38px; height: 38px; }
 
-  /* steps: swipe cards */
-  .steps { display: flex; gap: 10px; margin-inline: -16px; padding: 0 16px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-  .steps::-webkit-scrollbar { display: none; }
-  .steps li { flex: 0 0 70%; scroll-snap-align: start; }
+  /* steps: vertical timeline on phones */
+  .timeline { grid-template-columns: 1fr; gap: 26px; padding: 0 0 0 34px; }
+  .timeline::before, .timeline::after { display: block; top: 8px; bottom: 8px; left: 7px; right: auto; width: 2px; height: auto; }
+  .timeline::after { transform: scaleY(0); transform-origin: top; }
+  .timeline.in::after { transform: scaleY(1); }
+  .tl-dot { top: 2px; left: -34px; }
+  .timeline b { font-size: 21px; }
+  .timeline span:not(.tl-dot) { max-width: none; }
   .steps-cta { flex-direction: column; }
 
   .why { margin-top: 76px; padding: 64px 0; }
@@ -127,8 +134,10 @@
   .why-media img { aspect-ratio: 16 / 11; border-radius: 18px; }
   .why-badge { right: 12px; bottom: 12px; padding: 12px 16px; }
   .why-badge b { font-size: 20px; }
-  .perks { grid-template-columns: 1fr; gap: 8px; }
-  .perks li { padding: 16px; }
+  .perks { grid-template-columns: 1fr; }
+  .perks li, .perks li:nth-child(even) { padding: 22px 0; border-left: 0; }
+  .perks b { font-size: 19px; }
+  .perk-ico { width: 36px; height: 36px; margin-top: 12px; }
 
   .reviews { gap: 24px; }
   .rev-score { margin: 18px 0 14px; padding: 16px; }
@@ -136,9 +145,9 @@
   .rev-widget { border-radius: 16px; }
   .rev-widget iframe { height: 470px; }
 
-  .faq { grid-template-columns: 1fr; gap: 8px; }
-  .faq-item > button { padding: 18px; font-size: 15.5px; }
-  .faq-body p { padding: 0 18px; }
+  .faq-item > button { padding: 20px 0; font-size: 16.5px; }
+  .faq-body p { font-size: 15px; }
+  .faq-card { padding: 20px; }
 
   .contacts { margin-top: 76px; padding: 64px 0; }
   .addr { font-size: 17px; }
