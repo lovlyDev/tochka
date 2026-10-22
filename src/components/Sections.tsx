@@ -143,17 +143,18 @@ export function Brands() {
     <section className="brands" aria-label="Обслуживаем марки">
       <div className="wrap brands-head reveal">
         <span className="label">Марки</span>
-        <p>Обслуживаем легковые: отечественные, корейские, японские, европейские — и китайские <b>Chery, Haval, Geely</b>, а также Lexus, Genesis и Daewoo.</p>
+        <p>Обслуживаем легковые автомобили: отечественные, корейские, японские, китайские и европейские.</p>
       </div>
       <div className="marquee">
-        <div className="marquee-track">
+        <ul className="marquee-track">
           {row.map((b, i) => (
-            <span key={i} className="brand" title={b.name} aria-hidden={i >= brands.length}>
-              <i style={{ '--logo': `url(./brands/${b.id}.svg)` } as CSSProperties} />
-              <small>{b.name}</small>
-            </span>
+            <li key={i} className="brand" aria-hidden={i >= brands.length}>
+              {/* relative to the page, so it works both at the site root and under /tochka/ */}
+              <img src={`${import.meta.env.BASE_URL}brands/${b.file}`} alt={b.name} loading="lazy" draggable={false} />
+              <span>{b.name}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

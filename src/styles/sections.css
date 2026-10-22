@@ -83,12 +83,13 @@
 .marquee-track { display: flex; gap: 12px; width: max-content; animation: marquee 50s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(calc(-50% - 6px)); } }
-.brand { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; width: 150px; height: 112px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(180deg, var(--panel), var(--bg-2)); transition: border-color .3s, transform .4s var(--ease); }
-.brand i { width: 48px; height: 48px; background: #c9ced4; -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; transition: background .3s, transform .4s var(--ease); }
-.brand small { font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--muted); transition: color .3s; }
+.brand { flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 156px; height: 116px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(180deg, var(--panel), var(--bg-2)); transition: border-color .3s, transform .4s var(--ease); }
+/* any logo (svg or png) becomes a flat light-grey silhouette; yellow on hover */
+.brand img { width: 88px; height: 40px; object-fit: contain; filter: brightness(0) invert(.82); transition: filter .35s, transform .4s var(--ease); }
+.brand span { font-size: 12px; font-weight: 600; letter-spacing: .03em; color: var(--muted); transition: color .3s; }
 .brand:hover { border-color: rgba(253, 201, 43, .5); transform: translateY(-4px); }
-.brand:hover i { background: var(--y); transform: scale(1.08); }
-.brand:hover small { color: var(--text); }
+.brand:hover img { filter: brightness(0) saturate(100%) invert(79%) sepia(64%) saturate(1050%) hue-rotate(354deg) brightness(103%); transform: scale(1.08); }
+.brand:hover span { color: var(--text); }
 
 /* ================= steps: a line that fills as you scroll ================= */
 .timeline { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; padding-top: 34px; }

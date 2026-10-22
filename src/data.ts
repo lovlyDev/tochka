@@ -64,12 +64,18 @@ export const services: Service[] = [
 /** work types from the Yandex card that have no fixed price */
 export const alsoDo = ['Развал-схождение', 'Шиномонтаж', 'Ремонт ходовой', 'Замена ГРМ', 'Ремонт АКПП и DSG', 'Ремонт генераторов', 'Сигнализации', 'Сварочные работы', 'Выездной сервис'];
 
-/** logos from Simple Icons (public/brands); brands without a logo are named in the caption */
+/**
+ * Logos in public/brands, shown monochrome. Sources: Simple Icons (CC0) for most marks;
+ * Wikimedia Commons for Chery, Haval, Geely, Genesis and Lexus; car-logos-dataset for Daewoo.
+ */
 export const brands = [
-  { id: 'lada', name: 'Lada' }, { id: 'kia', name: 'Kia' }, { id: 'hyundai', name: 'Hyundai' }, { id: 'toyota', name: 'Toyota' },
-  { id: 'mitsubishi', name: 'Mitsubishi' }, { id: 'mazda', name: 'Mazda' }, { id: 'renault', name: 'Renault' }, { id: 'volkswagen', name: 'Volkswagen' },
-  { id: 'skoda', name: 'Škoda' }, { id: 'audi', name: 'Audi' }, { id: 'mercedes', name: 'Mercedes-Benz' }, { id: 'ford', name: 'Ford' },
-  { id: 'chevrolet', name: 'Chevrolet' }, { id: 'peugeot', name: 'Peugeot' },
+  { name: 'Lada', file: 'lada.svg' }, { name: 'Kia', file: 'kia.svg' }, { name: 'Hyundai', file: 'hyundai.svg' },
+  { name: 'Toyota', file: 'toyota.svg' }, { name: 'Lexus', file: 'lexus.svg' }, { name: 'Mitsubishi', file: 'mitsubishi.svg' },
+  { name: 'Mazda', file: 'mazda.svg' }, { name: 'Chery', file: 'chery.svg' }, { name: 'Haval', file: 'haval.svg' },
+  { name: 'Geely', file: 'geely.svg' }, { name: 'Genesis', file: 'genesis.svg' }, { name: 'Renault', file: 'renault.svg' },
+  { name: 'Volkswagen', file: 'volkswagen.svg' }, { name: 'Škoda', file: 'skoda.svg' }, { name: 'Audi', file: 'audi.svg' },
+  { name: 'Mercedes-Benz', file: 'mercedes.svg' }, { name: 'Ford', file: 'ford.svg' }, { name: 'Chevrolet', file: 'chevrolet.svg' },
+  { name: 'Daewoo', file: 'daewoo.png' }, { name: 'Peugeot', file: 'peugeot.svg' },
 ];
 
 export const perks = [

@@ -116,8 +116,8 @@
   .brands { padding-top: 50px; }
   .brands-head { flex-direction: column; gap: 4px; margin-bottom: 18px; }
   .brands-head p { font-size: 14.5px; }
-  .brand { width: 112px; height: 90px; gap: 8px; border-radius: 14px; }
-  .brand i { width: 38px; height: 38px; }
+  .brand { width: 116px; height: 94px; gap: 8px; border-radius: 14px; }
+  .brand img { width: 70px; height: 32px; }
 
   /* steps: vertical timeline on phones */
   .timeline { grid-template-columns: 1fr; gap: 26px; padding: 0 0 0 34px; }
