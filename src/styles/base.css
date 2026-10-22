@@ -40,7 +40,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn-y:hover { background: var(--y-2); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(253, 201, 43, .32); }
 .btn-ghost { border-color: var(--line-2); }
 .btn-ghost:hover { border-color: var(--y); color: var(--y); }
-.btn-max { background: var(--max); color: #fff; }
+.btn-max { background: linear-gradient(120deg, #44ccff, #5533ee 60%, #9933dd); color: #fff; }
+.max-ico { display: block; flex: none; border-radius: 22%; }
 .btn-lg { height: 60px; padding: 0 30px; font-size: 16px; }
 .btn-sm { height: 44px; padding: 0 18px; font-size: 13px; border-radius: 10px; }
 .btn-block { width: 100%; }

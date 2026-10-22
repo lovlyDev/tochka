@@ -36,14 +36,9 @@ export function Icon({ name, size = 20, className }: { name: string; size?: numb
   );
 }
 
-/** The MAX messenger mark, simplified. */
+/** Official MAX app icon (public/max.svg, from Wikimedia Commons). */
 export function MaxIcon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
-      <rect width="24" height="24" rx="7" fill="currentColor" opacity=".18" />
-      <path d="M6.5 16.5V8l5.5 5 5.5-5v8.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
+  return <img className="max-ico" src={`${import.meta.env.BASE_URL}max.svg`} width={size} height={size} alt="" aria-hidden="true" draggable={false} />;
 }
 
 export function VkIcon({ size = 20 }: { size?: number }) {

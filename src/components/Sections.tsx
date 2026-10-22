@@ -281,7 +281,7 @@ export function Contacts({ onBook }: { onBook: () => void }) {
           </ul>
           <div className="contact-btns">
             <a className="cbtn" href={contacts.phoneHref}><span className="cb-ico y"><Icon name="phone" /></span><span><b>{contacts.phone}</b><small>Позвонить</small></span></a>
-            <a className="cbtn" href={contacts.max} target="_blank" rel="noreferrer"><span className="cb-ico max"><MaxIcon size={24} /></span><span><b>MAX</b><small>Написать в чат</small></span></a>
+            <a className="cbtn" href={contacts.max} target="_blank" rel="noreferrer"><span className="cb-ico max"><MaxIcon size={46} /></span><span><b>MAX</b><small>Написать в чат</small></span></a>
             <a className="cbtn" href={contacts.vk} target="_blank" rel="noreferrer"><span className="cb-ico vk"><VkIcon size={22} /></span><span><b>ВКонтакте</b><small>Сообщество</small></span></a>
           </div>
           <button className="btn btn-y btn-block contacts-book" onClick={onBook}>Записаться онлайн</button>
@@ -312,7 +312,7 @@ export function MobileBar({ onBook, cartCount }: { onBook: () => void; cartCount
   return (
     <div className="mbar">
       <a href={contacts.phoneHref} className="mbar-btn" aria-label="Позвонить"><Icon name="phone" size={22} /><span>Звонок</span></a>
-      <a href={contacts.max} target="_blank" rel="noreferrer" className="mbar-btn" aria-label="Написать в MAX"><MaxIcon size={22} /><span>MAX</span></a>
+      <a href={contacts.max} target="_blank" rel="noreferrer" className="mbar-btn" aria-label="Написать в MAX"><MaxIcon size={24} /><span>MAX</span></a>
       <button className="mbar-main" onClick={onBook}>Записаться{cartCount > 0 && <span className="count">{cartCount}</span>}</button>
     </div>
   );

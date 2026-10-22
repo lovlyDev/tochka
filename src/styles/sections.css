@@ -172,7 +172,7 @@
 .cbtn small { color: var(--muted); font-size: 13px; }
 .cb-ico { display: grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 12px; color: #fff; }
 .cb-ico.y { background: var(--y); color: #111; }
-.cb-ico.max { background: var(--max); }
+.cb-ico.max { background: none; overflow: hidden; }
 .cb-ico.vk { background: var(--vk); }
 .contacts-book { margin-top: 14px; }
 .map { position: relative; min-height: 460px; overflow: hidden; border-radius: 20px; border: 1px solid var(--line); }
