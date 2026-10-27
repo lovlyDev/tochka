@@ -193,7 +193,7 @@ export function Why() {
       <div className="wrap why-grid">
         <div className="why-media reveal">
           {pic('engine', 'Ремонт двигателя')}
-          <div className="why-badge"><b>гарантия</b><span>на выполненные работы</span></div>
+          <div className="why-badge"><b>30 дней</b><span>гарантия на работы</span></div>
         </div>
         <div>
           <div className="head reveal"><div><span className="label">Почему мы</span><h2>Почему «Точка»</h2></div></div>

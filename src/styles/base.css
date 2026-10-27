@@ -56,7 +56,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .logo-pin circle { fill: var(--y); }
 .logo-text { display: flex; flex-direction: column; line-height: 1; }
 .logo-text b { font: 22px var(--display); letter-spacing: .04em; }
-.logo-text small { margin-top: 3px; font-size: 12px; font-weight: 600; letter-spacing: .12em; color: var(--y); }
+.logo-text small { margin-top: 4px; font-size: 14.5px; font-weight: 700; letter-spacing: .1em; color: #fff; }
 
 /* ---------- open badge ---------- */
 .open-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
