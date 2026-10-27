@@ -11,14 +11,12 @@ const links = [
   ['#contacts', 'Контакты'],
 ];
 
-/** «ТОЧКА» with «автосервис» under it, like the sign. */
+/** The client's logo (pin with gears), recoloured for the dark header: black became white. */
 export function Logo() {
+  const src = import.meta.env.BASE_URL;
   return (
-    <a href="#top" className="logo" aria-label="Точка — автосервис">
-      <span className="logo-pin" aria-hidden="true">
-        <svg viewBox="0 0 32 40"><path d="M16 39s14-12.3 14-23A14 14 0 0 0 2 16c0 10.7 14 23 14 23z" /><circle cx="16" cy="15.5" r="5.2" /></svg>
-      </span>
-      <span className="logo-text"><b>ТОЧКА</b><small>автосервис</small></span>
+    <a href="#top" className="logo">
+      <img src={`${src}logo-64.png`} srcSet={`${src}logo-64.png 1x, ${src}logo-128.png 2x`} alt="Точка — автосервис" width={159} height={64} />
     </a>
   );
 }
